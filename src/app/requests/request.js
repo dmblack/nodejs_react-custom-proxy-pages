@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
-  tech: {
+  request: {
     height: '15rem',
     width: '15rem',
     border: '1px solid lightgray',
@@ -21,21 +22,21 @@ const styles = {
   }
 };
 
-export class Tech extends Component {
+export class Request extends Component {
   render() {
     return (
-      <div style={styles.tech}>
-        <img style={styles.logo} src={this.props.tech.logo}/>
+      <div style={styles.request}>
+        <img style={styles.logo} src={this.props.request.logo}/>
         <h3 style={styles.h3}>
-          {this.props.tech.title}
+          {this.props.request.title}
         </h3>
-        <p>{this.props.tech.text1}</p>
-        <p>{this.props.tech.text2}</p>
+        <p>{this.props.request.text1}</p>
+        <p>{this.props.request.text2}</p>
       </div>
     );
   }
 }
 
-Tech.propTypes = {
-  tech: React.PropTypes.object.isRequired
+Request.propTypes = {
+  request: PropTypes.object.isRequired
 };

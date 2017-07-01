@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+
 import axios from 'axios';
 
-import {Tech} from './tech';
+import {Request} from './request';
 
 const styles = {
   container: {
@@ -11,7 +12,7 @@ const styles = {
     fontWeight: 300,
     fontSize: '1.5rem'
   },
-  techs: {
+  requests: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -19,17 +20,17 @@ const styles = {
   }
 };
 
-export class Techs extends Component {
+export class Requests extends Component {
   constructor() {
     super();
-    this.state = {techs: []};
+    this.state = {requests: []};
   }
 
   componentDidMount() {
     axios
-      .get('app/techs/techs.json')
+      .get('app/requests/requests.json')
       .then(response => {
-        this.setState({techs: response.data});
+        this.setState({requests: response.data});
       });
   }
 
@@ -37,11 +38,11 @@ export class Techs extends Component {
     return (
       <div style={styles.container}>
         <h2 style={styles.h2}>
-          Cooked with all these awesome technologies:
+          Cooked with all these awesome requestnologies:
         </h2>
-        <div style={styles.techs}>
-          {this.state.techs.map((tech, i) => (
-            <Tech key={i} tech={tech}/>
+        <div style={styles.requests}>
+          {this.state.requests.map((request, i) => (
+            <Request key={i} request={request}/>
           ))}
         </div>
       </div>

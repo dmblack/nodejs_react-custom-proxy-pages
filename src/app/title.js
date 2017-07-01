@@ -36,7 +36,7 @@ export class Title extends Component {
           <img style={styles.logo} src="http://fountainjs.io/assets/imgs/yeoman.png"/>
           <img style={styles.logo} src="http://fountainjs.io/assets/imgs/fountain.png"/>
         </div>
-        <h2 style={styles.h2}>Always a pleasure scaffolding your apps.</h2>
+        <h2 style={styles.h2}>Your request has been rejected by the proxy.</h2>
       </div>
     );
   }
