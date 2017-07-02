@@ -6,8 +6,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '1rem',
-    backgroundColor: '#cf4646',
-    color: 'white'
+    backgroundColor: '#fcfcfc'
   },
   h1: {
     fontWeight: 300,
@@ -31,7 +30,7 @@ export class Title extends Component {
   render() {
     return (
       <div style={styles.title}>
-        <h2 style={styles.h2}>Your request has been rejected by the proxy.</h2>
+        <h2 style={styles.h2}>This request was blocked by the proxy.</h2>
       </div>
     );
   }

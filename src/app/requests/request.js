@@ -32,6 +32,6 @@ export class Request extends Component {
 }
 
 Request.propTypes = {
-  requestDomainName: PropTypes.object.isRequired,
-  clientIP: PropTypes.object.isRequired
+  requestDomainName: PropTypes.string.isRequired,
+  clientIP: PropTypes.string.isRequired
 };

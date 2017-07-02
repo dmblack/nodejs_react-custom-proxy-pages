@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import PropTypes from 'prop-types';
+
 const styles = {
   header: {
     display: 'flex',
@@ -25,13 +27,17 @@ export class Header extends Component {
       <header style={styles.header}>
         <p style={styles.title}>
           <a href="https://github.com/FountainJS/generator-fountain-webapp" target="_blank" rel="noopener noreferrer">
-            Fountain Generator
+            Blocked with ♥
           </a>
         </p>
         <p style={styles.date}>
-          Generated with FountainJS v1.0.0 on Fri Jun 30 2017 20:23:06 GMT+1000 (AEST)
+          Timestamp: {this.props.timeStamp}
         </p>
       </header>
     );
   }
 }
+
+Header.propTypes = {
+  timeStamp: PropTypes.string.isRequired
+};
