@@ -1,42 +1,37 @@
 import React, {Component} from 'react';
+
 import PropTypes from 'prop-types';
 
 const styles = {
-  request: {
-    height: '15rem',
-    width: '15rem',
-    border: '1px solid lightgray',
-    borderRadius: '1rem',
-    margin: '1rem',
-    padding: '1rem'
+  container: {
+    margin: '1rem'
   },
-  logo: {
-    width: '5rem',
-    height: '5rem',
-    float: 'right',
-    margin: '0 0 .5rem .5rem'
-  },
-  h3: {
+  h2: {
+    fontWeight: 300,
     fontSize: '1.5rem',
-    margin: '0 0 2rem 0'
+    textAlign: 'center'
+  },
+  request: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around'
   }
 };
 
 export class Request extends Component {
   render() {
     return (
-      <div style={styles.request}>
-        <img style={styles.logo} src={this.props.request.logo}/>
-        <h3 style={styles.h3}>
-          {this.props.request.title}
-        </h3>
-        <p>{this.props.request.text1}</p>
-        <p>{this.props.request.text2}</p>
+      <div style={styles.container}>
+        <h2 style={styles.h2}>
+          <p> The request from {this.props.clientIP} to {this.props.requestDomainName} has been rejected.</p>
+        </h2>
       </div>
     );
   }
 }
 
 Request.propTypes = {
-  request: PropTypes.object.isRequired
+  requestDomainName: PropTypes.object.isRequired,
+  clientIP: PropTypes.object.isRequired
 };

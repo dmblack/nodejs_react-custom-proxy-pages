@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Header} from './header';
 import {Title} from './title';
-import {Requests} from './requests/requests';
+import {Request} from './requests/request';
 import {Footer} from './footer';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
@@ -24,6 +24,7 @@ export class Main extends Component {
     super();
     this.state = {requestDomainName: '', clientIP: ''};
   }
+
   componentDidMount() {
     const urlSearchString = queryString.parse(location.search);
     this.setState({requestDomainName: urlSearchString.requestDomainName, clientIP: urlSearchString.clientIP});
@@ -33,11 +34,9 @@ export class Main extends Component {
     return (
       <div style={styles.container}>
         <Header/>
-        <p> Request To: {this.state.requestDomainName}</p>
-        <p> Request By: {this.state.clientIP}</p>
         <main style={styles.main}>
           <Title/>
-          <Requests/>
+          <Request requestDomainName={this.state.requestDomainName} clientIP={this.state.clientIP}/>
         </main>
         <Footer/>
       </div>
