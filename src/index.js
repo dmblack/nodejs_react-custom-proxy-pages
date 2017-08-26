@@ -10,7 +10,7 @@ import './index.scss';
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/deny_info" component={Main}/>
+    <Route path="/" component={Main}/>
   </Router>,
   document.getElementById('root')
 );
